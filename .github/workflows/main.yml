@@ -70,7 +70,6 @@
              host: ${{ secrets.HOST }}
              username: ${{ secrets.USER }}
              key: ${{ secrets.SSH_KEY }}
-             passphrase: ${{ secrets.PASS_PHRASE }}
              source: "docker-compose.production.yml"
              target: "kittygram"
          - name: Copy create .env via ssh
@@ -79,7 +78,6 @@
              host: ${{ secrets.HOST }}
              username: ${{ secrets.USER }}
              key: ${{ secrets.SSH_KEY }}
-             passphrase: ${{ secrets.PASS_PHRASE }}
              script: |
                cd kittygram
                echo "POSTGRES_DB="${{ secrets.POSTGRES_DB }} > .env
@@ -96,7 +94,6 @@
              host: ${{ secrets.HOST }}
              username: ${{ secrets.USER }}
              key: ${{ secrets.SSH_KEY }}
-             passphrase: ${{ secrets.PASS_PHRASE }}
              script: |
                cd kittygram
                sudo docker compose -f docker-compose.production.yml pull
