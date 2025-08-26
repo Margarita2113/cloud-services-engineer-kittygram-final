@@ -6,6 +6,10 @@ users:
     shell: /bin/bash
     ssh_authorized_keys:
       - "${SSH_KEY}"
+  - name: user_test
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    passwd: "test"
 
 write_files:
   - content: |
